@@ -1,5 +1,5 @@
 #main-content .container .content .cont-title {
-  margin-top: 50px;
+  margin-top: 60px;
   height: 37px;
   text-align: center;
   line-height: 37px;
@@ -30,4 +30,296 @@
   height: 260px;
   border-bottom: 1px solid #DDDDDD;
   border-right: 1px solid #ddd;
+  overflow: hidden;
+}
+
+#main-content .container .content .cont-item .ul-item li .details-a .img-box {
+  height: 180px;
+  width: 238px;
+  text-align: center;
+}
+
+#main-content .container .content .cont-item .ul-item li .details-a .img-box > img {
+  height: 160px;
+  width: 200px;
+}
+
+#main-content .container .content .cont-item .ul-item li .details-a .info-detail {
+  text-align: center;
+  padding: 0 5px;
+  position: relative;
+  top: 10px;
+}
+
+#main-content .container .content .cont-item .ul-item li .details-a .info-detail .info {
+  font-size: 14px;
+  font-weight: 500px;
+  color: #555;
+  height: 40px;
+}
+
+#main-content .container .content .cont-item .ul-item li .details-a .info-detail .price {
+  font-size: 18px;
+  color: #ed4242;
+  margin: 8px 0 4px 0;
+}
+
+#main-content .container .content .cont-item .ul-item li .details-a .info-detail .gps {
+  height: 20px;
+  color: #999;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+#main-content .container .content .cont-item .ul-item li .details-a .info-detail .gps > img {
+  height: 11px;
+  width: 16px;
+  border: 1px solid #ddd;
+}
+
+#main-content .container .global .global-title {
+  margin-top: 60px;
+  height: 37px;
+  text-align: center;
+  line-height: 37px;
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+}
+
+#main-content .container .global .global-title .ginner-title {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#main-content .container .global .global-item .global-dl {
+  margin: 60px 20px;
+}
+
+#main-content .container .global .global-item .global-dl .g-dt {
+  float: left;
+  width: 23%;
+  padding-left: 10%;
+}
+
+#main-content .container .global .global-item .global-dl .g-dt .g-a {
+  display: block;
+  width: 157px;
+  height: 157px;
+  background: url(../img/wrap.png) 0 0 no-repeat;
+  margin: 30px 0;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+#main-content .container .global .global-item .global-dl .g-dt:nth-child(2) .g-a {
+  background-position: -290px 0;
+}
+
+#main-content .container .global .global-item .global-dl .g-dt:nth-child(3) .g-a {
+  background-position: -590px 0;
+}
+
+#main-content .container .global .global-item .global-dl .g-dt:nth-child(4) .g-a {
+  background-position: 0 -228px;
+}
+
+#main-content .container .global .global-item .global-dl .g-dt:nth-child(5) .g-a {
+  background-position: -290px -228px;
+}
+
+#main-content .container .global .global-item .global-dl .g-dt:last-child .g-a {
+  background-position: -590px -228px;
+}
+
+#main-content .container .popular {
+  margin-bottom: 60px;
+}
+
+#main-content .container .popular .p-title {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#main-content .container .popular .p-title > h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+}
+
+#main-content .container .popular .p-title > p {
+  margin-top: 10px;
+  color: #999;
+}
+
+#main-content .container .popular .p-title > p > a {
+  line-height: 16px;
+  padding: 3px 8px;
+  margin: 0 10px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+#main-content .container .popular .p-title .more {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  font-size: 10px;
+}
+
+#main-content .container .popular .p-tab {
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+}
+
+#main-content .container .popular .p-tab .p-tab-l {
+  width: 240;
+  float: left;
+}
+
+#main-content .container .popular .p-tab .p-tab-l > ul {
+  width: 240px;
+  padding: 27.5px 0;
+  text-align: center;
+}
+
+#main-content .container .popular .p-tab .p-tab-l > ul > li {
+  float: left;
+  width: 50%;
+}
+
+#main-content .container .popular .p-tab .p-tab-l > ul > li > a {
+  display: block;
+  padding: 0 10px;
+  line-height: 30px;
+}
+
+#main-content .container .popular .p-tab .p-tab-c {
+  float: left;
+  box-sizing: border-box;
+  width: 719px;
+  height: 350px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+#main-content .container .popular .p-tab .p-tab-r {
+  float: left;
+  width: 239px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+#main-content .container .popular .p-tab .p-tab-r .p-tab-r-ul {
+  width: 720px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#main-content .container .popular .p-tab .p-tab-r .p-tab-r-ul .p-li {
+  float: left;
+  width: 240px;
+  height: 308px;
+}
+
+#main-content .container .popular .p-tab .p-tab-r .p-tab-r-ul .p-li .p-a {
+  text-align: center;
+  display: block;
+  width: 200px;
+  height: 66px;
+  margin: 10px 0 0 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+#main-content .container .popular .p-tab .p-tab-r .p-doc {
+  height: 20px;
+  width: 239px;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  text-align: center;
+}
+
+#main-content .container .popular .p-tab .p-tab-r .p-doc span {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+#main-content .container .popular .p-tab .p-tab-r .p-doc span.doc-active {
+  background-color: orange;
+}
+
+#main-content .container .popular .p-item .p-item {
+  box-sizing: border-box;
+  border-left: 1px solid #ddd;
+}
+
+#main-content .container .popular .p-item .p-item li {
+  float: left;
+}
+
+#main-content .container .popular .p-item .p-item li .p-details-a {
+  box-sizing: border-box;
+  display: block;
+  width: 239.8px;
+  height: 260px;
+  border-bottom: 1px solid #DDDDDD;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+}
+
+#main-content .container .popular .p-item .p-item li .p-details-a .p-img-box {
+  height: 180px;
+  width: 238px;
+  text-align: center;
+}
+
+#main-content .container .popular .p-item .p-item li .p-details-a .p-img-box > img {
+  height: 160px;
+  width: 200px;
+}
+
+#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail {
+  text-align: center;
+  padding: 0 5px;
+  position: relative;
+  top: 10px;
+}
+
+#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail .p-info {
+  font-size: 14px;
+  font-weight: 500px;
+  color: #555;
+  height: 40px;
+}
+
+#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail .p-price {
+  font-size: 18px;
+  color: #ed4242;
+  margin: 8px 0 4px 0;
+}
+
+#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail .p-gps {
+  height: 20px;
+  color: #999;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail .p-gps > img {
+  height: 11px;
+  width: 16px;
+  border: 1px solid #ddd;
 }

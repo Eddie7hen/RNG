@@ -71,7 +71,7 @@
                     this.$ul.append(this.$lis);
 
                     this.$ul.find('img').css({
-                        width:$carousel.width(),
+                        width:opt.width,
                         height:opt.height
                     })
                    
@@ -90,7 +90,6 @@
                         this.stop();
                     })
                     $carousel.on('mouseout',()=>{
-                        console.log(this);
                         this.start();
                     })
 
