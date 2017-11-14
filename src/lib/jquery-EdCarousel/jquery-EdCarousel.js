@@ -41,6 +41,10 @@
             //处理传入的参数，通过Object.assign()或者遍历for..in
             var opt = $.extend({},defaults,options);
 
+            $carousel.css({
+                height:opt.height
+            })
+
 
             var carousel = {
                 //初始化,创建节点,绑定事件
@@ -52,13 +56,25 @@
                     //创建ul
                     this.$ul = $('<ul/>');
 
+                    this.$ul.css({
+                        width:$carousel.width(),
+                        height:opt.height
+                    });
+
                     //生成li和img
                     this.$lis = opt.img.map(function(item){
                         return `<li><img src=${item}></li>`;
                     }).join('');
 
+
                     //将li插入到ul
                     this.$ul.append(this.$lis);
+
+                    this.$ul.find('img').css({
+                        width:$carousel.width(),
+                        height:opt.height
+                    })
+                   
                     
                     //插入到显示的位置
                     $carousel.append(this.$ul); 

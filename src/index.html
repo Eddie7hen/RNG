@@ -2,28 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>首页</title>
-    <link rel="stylesheet" type="text/css" href="./css/home.css" />
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" href="./css/base.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" type="text/css" href="lib/jquery-EdCarousel/jquery-EdCarousel.css" />
+    <script src="./lib/jQuery/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="./lib/jquery-EdCarousel/jquery-EdCarousel.js" type="text/javascript"></script>
 </head>
 <body>
-    <h1>首页</h1>
-    <ul class="box">
-        <h3>华语乐坛top10</h3>
-        <li>歌曲1</li>
-        <li>歌曲2</li>
-        <li>歌曲3</li>
-        <li>歌曲4</li>
-        <li>歌曲5</li>
-        <li>歌曲6</li>
-        <li>歌曲7</li>
-        <li>歌曲8</li>
-        <li>歌曲9</li>
-        <li>歌曲10</li>
-    </ul>
-    <span>啦啦啦辣辣辣</span>
-    <div class="container">
-        <div class="left"></div>
-        <div class="right"></div>
-    </div>
+    <main id="main-content">
+        <div class="carousel"></div>
+        <div class="container">
+            <div class="content">
+                <p class="cont-title">新品上架&nbsp;/<span class="inner-title">&nbsp;每天一点小期待</span></p>
+                <div class="cont-item">
+                    <ul class="ul-item clearfix">
+                        <li>
+                            <a href="#" class="details-a">
+                                <div class="img-box">
+                                    <img src="./img/1.jpg"  />
+                                </div>
+                                <div class="info-detail">
+                                    <h3 title="冷泉世家 0456天然苏打水 无气弱碱性饮用水 350ml*20 包邮"> 冷泉世家 0456天然苏打水 无气弱碱性饮用水 350ml*20 包邮</h3>
+                                    <p class="price">¥129.78</p>
+                                    <p class="gps">
+                                        <img src="img/cn.jpg" />
+                                    </p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
+<script src="./js/index.js" type="text/javascript"></script>

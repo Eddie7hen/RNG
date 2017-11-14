@@ -1,0 +1,33 @@
+#main-content .container .content .cont-title {
+  margin-top: 50px;
+  height: 37px;
+  text-align: center;
+  line-height: 37px;
+  font-size: 24px;
+  color: black;
+  font-weight: bold;
+}
+
+#main-content .container .content .cont-title .inner-title {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+#main-content .container .content .cont-item .ul-item {
+  box-sizing: border-box;
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+#main-content .container .content .cont-item .ul-item li {
+  float: left;
+}
+
+#main-content .container .content .cont-item .ul-item li .details-a {
+  box-sizing: border-box;
+  display: block;
+  width: 239.8px;
+  height: 260px;
+  border-bottom: 1px solid #DDDDDD;
+  border-right: 1px solid #ddd;
+}

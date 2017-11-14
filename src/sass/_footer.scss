@@ -1,0 +1,79 @@
+#footer{
+    background-color:#EEEEEE;
+    .container{
+        .fter-left{
+            width: 592px;
+            .fterLeft-top{
+                dt{
+                    float: left;
+                    a{  
+                        display:block;
+                        font-size:12px;
+                        padding:14px 0;
+                        margin-right:26px;
+                    }
+                }
+            }
+            .fterLeft-cent{
+                height:70px;
+                a{
+                    width: 127px;
+                    height: 48px;
+                    display:block;
+                    background:url('../img/confid.png');
+                }
+            }
+            .fterLeft-btom{
+                p{
+                    font-size:12px;
+                    height: 14px;
+                    color:#999999;
+                    padding-bottom:8px;
+                    a{
+                        color:black;
+                    }
+                }
+                >a{
+                    display:block;
+                    line-height:22px;
+                    height: 22px;
+                    color:black;
+                    padding-bottom:10px;
+                    i{
+                        float: left;
+                        width: 20px;
+                        height: 22px;
+                        background:url('../img/policelogo.png');
+                    }
+                }
+            }
+        }
+        .fter-center{
+            width: 312px;
+            padding-left:54px;
+            h4{
+                padding:14.5px 0;
+                font-size:12px;
+            }
+            h5{
+                font-size:10px;
+                padding:14.5px 0;
+                margin-bottom:4px;
+            }
+            p{
+                font-size:12px;
+                padding-bottom:92px;
+            }
+        }
+        .fter-right{
+            width: 242px;
+            height: 217px;
+            img{
+                float: right;
+                width: 161px;
+                height: 199px;
+            }
+        }
+    }
+    
+}

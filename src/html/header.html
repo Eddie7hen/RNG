@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>header</title>
+    <link rel="stylesheet" type="text/css" href="../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/header.css" />
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="top clearfix">
+                <ul class="nav-top fl">
+                    <li class="iconfont icon-zhongguo" style="color:red;padding:0 0 0 2px;"><a href="" style="padding:0 0 0 5px;">中国</a><i></i></li>
+                    <li class="iconfont icon-renminbi"><a href="" style="padding:0 0 0 5px;">人民币</a><i style="left:62px"></i></li>
+                </ul>
+                <ul class="nav-top fr tc">
+                    <li class="iconfont icon-shouji" style="padding-right:20px;width:100px;font-size:16px;"><a style="font-size:12px;">下载手机TPS</a></li>
+                    <li style="width:60px;"><a href="" style="border-right:1px solid #863386;padding-right:23px;">登录</a></li>
+                    <li style="width:60px;"><a href="" >注册</a></li>
+                    <li><a href="">我的关注(0)</a></li>
+                    <li style="padding-right:7px;"><a href="">个人中心</a><i style="left:69px;"></i></li>
+                </ul>
+            </div>
+            <div class="center clearfix">
+                <div class="logo fl">
+                    <a href="">
+                    </a>
+                </div>
+                <div class="search fl">
+                    <input class="search-top">
+                    <button class="fr iconfont icon-search1"></button>
+                    <ul class="search-bottom clearfix">
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                        <li><a href="#">大米</a></li>
+                    </ul>
+                </div>
+                <div class="cart fr">
+                    <a href="" >
+                        <i class="iconfont icon-gouwuche fl tc"></i>
+                        <span class="fr tc">购物车</span>
+                    </a>
+                </div>
+            </div>
+            <div class="bottom clearfix">
+                <h3 class="fl tc menu">
+                    <i class="iconfont icon-caidan" ></i>
+                    全部商品分类
+                    <!-- 二级导航 -->
+                    <!-- <dl class="menu-sec">
+                        <dt class="sec-item">
+                            <a href="#" class="sec-a">生活服务</a>
+                        </dt>
+                    </dl> -->
+                    <!-- 3级导航 -->
+                   <!--  <div class="menu-trd">
+                        <dl class="trd-item">
+                            <dt class="trd-l">
+                                <a href="#">婴幼儿奶粉</a>
+                            </dt>
+                            <dt class="trd-r">
+                                <a href="#" class="trd-r-a">1段</a>
+                                <a href="#" class="trd-r-a">2段</a>
+                                <a href="#" class="trd-r-a">3段</a>
+                            </dt>
+                        </dl>
+                    </div> -->
+                </h3>
+                <ul class="list fl tc">
+                    <li><a href="#">商城首页</a></li>
+                    <li><a href="#">新品上市</a></li>
+                    <li><a href="#">口碑热卖</a></li>
+                    <li><a href="#">特惠专区</a></li>
+                    <li>
+                        <i></i>
+                        <a href="#">生活服务</a>
+                        <dl>
+                            <dt><a href="#">旅游</a></dt>
+                            <dt><a href="#">酒店</a></dt>
+                            <dt><a href="#">餐饮</a></dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <i></i>
+                        <a href="#">全球购</a>
+                        <dl>
+                            <dt><a href="#">港澳台馆</a></dt>
+                            <dt><a href="#">港澳台馆</a></dt>
+                            <dt><a href="#">港澳台馆</a></dt>
+                            <dt><a href="#">港澳台馆</a></dt>
+                            <dt><a href="#">港澳台馆</a></dt>
+                            <dt><a href="#">港澳台馆</a></dt>
+                        </dl>
+                    </li>
+                    <li>
+                        <i></i>
+                        <a href="#">关于我们</a>
+                        <dl>
+                            <dt><a href="#">物流配送</a></dt>
+                            <dt><a href="#">物流配送</a></dt>
+                            <dt><a href="#">物流配送</a></dt>
+                            <dt><a href="#">物流配送</a></dt>
+                            <dt><a href="#">物流配送</a></dt>
+                            <dt><a href="#">物流配送</a></dt>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
+<script type="text/javascript">
+(function(){
+    var menu = document.querySelector('.menu');
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+        if(xhr.status === 200 || xhr.status === 304){
+            var res = eval('('+xhr.responseText+')').sorts; 
+
+            //二级菜单
+            var menuSec = document.createElement('dl');
+            menuSec.classList.add('menu-sec');
+            console.log(res);
+            menuSec.innerHTML = res.map(function(item){
+                return `<dt class="sec-item">
+                            <a href="#" class="sec-a" id="${item.id}">${item.name}</a>
+                </dt>`
+            }).join('');
+            menu.appendChild(menuSec);
+
+            var id = 0;
+            
+            //一级绑定事件
+            menu.onmousemove = function(){
+                menuSec.style.display = 'block';
+            }
+            menu.onmouseout = function(){
+                menuSec.style.display = 'none';
+            }   
+
+            //移入二级标签时生成对应的三级标签
+            var menuTrd = document.createElement('div');
+            menuTrd.classList.add('menu-trd');
+            
+            console.log(menuSec.children.length);
+            //二级菜单移入绑定事件
+            menuSec.onmousemove = function(e){
+                for(var i=0;i<menuSec.children.length;i++){
+                    menuSec.children[i].classList.remove('sec-active');
+                    menuSec.children[i].children[0].classList.remove('sec-active');
+                }
+                e.target.classList.add('sec-active');
+                id = +e.target.id;//获取id
+                
+                //三级数据
+                var menutrd = getData(res,id);
+                var html = getHTML(menutrd);
+                menuTrd.innerHTML =html;
+                menu.appendChild(menuTrd);
+            }
+            //二级菜单移出事件
+            var timer = setTimeout(function(){
+                menuSec.onmouseout = function(e){
+                    for(var i=0;i<menuSec.children.length;i++){
+                        menuSec.children[i].classList.remove('sec-active');
+                        menuSec.children[i].children[0].classList.remove('sec-active');
+                    }
+                }    
+            },2000)
+
+            /*
+                问题:移入三级时,显示二级当前不隐藏
+                思路:   延迟二级菜单的关闭
+                        移入三级时,清除二级延时器
+                        显示二级
+             */
+            menuTrd.onmouseover = function(){
+                clearTimeout(timer);
+                menuSec.style.display = 'block';
+                for(var i=0;i<menuSec.children.length;i++){
+                    menuSec.children[i].classList.remove('sec-active');
+                    menuSec.children[i].children[0].classList.remove('sec-active');
+                }
+                menuSec.children[id-1].children[0].classList.add('sec-active');
+            }
+            menuTrd.onmouseleave = function(){
+                menu.removeChild(menuTrd);
+                for(var i=0;i<menuSec.children.length;i++){
+                    menuSec.children[i].classList.remove('sec-active');
+                    menuSec.children[i].children[0].classList.remove('sec-active');
+                }
+                menuSec.style.display = 'none';
+            }
+
+            //传入对应id和数据返回需要的数据
+            function getData(data,id){
+                if(id){
+                    console.log()
+                    for(var i=0;i<data.length;i++){
+                        if(id == data[i].id){
+                            return data[i].sorts;
+                        }
+                    }     
+                }
+                return data.sorts;
+            }
+
+            //生成三级结构页面结构
+            function getHTML(data){
+                 return data.map(function(item){
+                    return `<dl class="trd-item">
+                            <dt class="trd-l" id="${item.id}">
+                                <a href="#">${item.name}</a>
+                            </dt>
+                            <dt class="trd-r">
+                                ${item.sorts.map(it=>{ 
+                                    return `<a href="#" class="trd-r-a">${it.name}</a>`
+                                }).join('')}
+                            </dt>
+                            </dl> `
+                }).join('');
+            }
+
+        }
+
+    }
+    xhr.open('get','../api/data/data.json',true);
+    xhr.send(null);
+
+
+})();
+</script>

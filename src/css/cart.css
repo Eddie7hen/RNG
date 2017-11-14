@@ -1,0 +1,124 @@
+#cart .container .cart-switch {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 2;
+}
+
+#cart .container .cart-switch .cart-item {
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  border: 1px solid #E4393C;
+  position: relative;
+  left: 17px;
+  text-align: center;
+  line-height: 20px;
+}
+
+#cart .container .cart-box .clear {
+  padding: 0 10px;
+  height: 40px;
+  background-color: #eee;
+  line-height: 40px;
+  color: #333;
+}
+
+#cart .container .cart-box .cart-items {
+  padding: 10px;
+  height: 108px;
+  background-color: #fff;
+  border: 1px dotted #eee;
+}
+
+#cart .container .cart-box .cart-items .g-pic {
+  float: left;
+  width: 36%;
+  max-height: 100px;
+}
+
+#cart .container .cart-box .cart-items .g-pic img {
+  width: 100%;
+}
+
+#cart .container .cart-box .cart-items .g-info {
+  float: right;
+  width: 55%;
+  line-height: 1.6em;
+  font-size: 12px;
+}
+
+#cart .container .cart-box .cart-items .g-attr {
+  font-size: 12px;
+}
+
+#cart .container .cart-box .cart-items .g-price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#cart .container .cart-box .cart-items .g-num {
+  line-height: 25px;
+}
+
+#cart .container .cart-box .cart-items .g-num .dis {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+}
+
+#cart .container .cart-box .cart-items .g-num .ipt {
+  display: inline-block;
+  width: 36px;
+  height: 17px;
+  text-align: center;
+  padding: 4px 5px;
+}
+
+#cart .container .cart-box .cart-items .g-total {
+  color: orange;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#cart .container .cart-box .cart-items .g-btnclose {
+  font-size: 24px;
+  line-height: 3em;
+}
+
+#cart .container .cart-box .cart-items .g-btnclose:hover {
+  color: red;
+}
+
+#cart .container .cart-box .cart-settle {
+  height: 176px;
+  background-color: #fff;
+  border: 1px dotted orange;
+}
+
+#cart .container .cart-box .cart-settle .inner-settle {
+  height: 173px;
+  background-color: #FDFBF2;
+  padding-top: 20px;
+}
+
+#cart .container .cart-box .cart-settle .inner-settle p {
+  padding: 0 0 7px 10px;
+  text-align: right;
+}
+
+#cart .container .cart-box .cart-settle .inner-settle p .cse {
+  color: orange;
+}
+
+#cart .container .cart-box .cart-settle .inner-settle p .cart-checkout {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #E61000;
+  background-color: #E61000;
+  color: #fff;
+  text-decoration: none;
+}

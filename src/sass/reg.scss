@@ -1,0 +1,84 @@
+@import "header";
+@import "footer";
+
+$bgUrl:"../img/reg_bg.gif";
+#reg{
+    background:url(#{$bgUrl}) center no-repeat;
+    .container{
+        height: 600px;
+        position:relative;
+        .reg-box{
+            width: 380px;
+            height: 356px;
+            background-color:#fff;
+            position:absolute;
+            right:0;
+            top:120px;
+            .reg-nav{
+                font-size:20px;
+                font-weight:bold;
+                color:#999999;
+                padding:43px 0 37px 0;
+                text-align:center;
+            }
+            .ph-reg{
+                height: 255px;
+                ul{
+                    li{
+                        position:relative;
+                        margin-bottom:5px;
+                        // text-align:center;
+                        padding:0 25px;
+                        .regIpt{
+                           width: 298px;
+                           height: 38px;
+                           border:1px solid #E5E5E5;
+                           border-radius:7px;
+                           font-size:18px;
+                           padding-left:30px;
+                        }
+                        i{
+                            position:absolute;
+                            left:27px;
+                            top:25%;
+                            font-size:30px;
+                        }
+                        .checkIpt{
+                            float: left;
+                            width: 160px;
+                            height: 38px;
+                            border:1px solid #E5E5E5;
+                            border-radius:7px;
+                            font-size:18px;
+                            margin-right:10px;
+                            padding-left:30px;
+                            margin-bottom:10px;
+                        }
+                        .showCode{
+                            float: right;
+                            width: 120px;
+                            height: 38px;
+                            border:1px solid #E5E5E5;
+                            border-radius:7px;
+                            font-size:18px;
+                            text-align:center;
+                            line-height:38px;
+                        }
+                        .btnIpt{
+                            width: 330px;
+                            height: 40px;
+                            background-color:#ED4242;
+                            color:#fff;
+                            font-size:20px;
+                            border-radius:7px;
+                        }
+                    }
+                    .notVip{
+                        padding:0 25px;
+                       font-size:12px;
+                    }
+                }
+            }
+        }
+    }  
+}
