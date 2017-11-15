@@ -1,0 +1,159 @@
+$mainColor:orange;
+#main-cont{
+    .container{
+        .crumbs{
+            width: 100%;
+            padding: 10px 0;
+            .ico{
+                font-size:18px;
+                font-weight:bold;
+                margin-right:5px;
+            }
+            .crumbs-a{
+                padding:5px 0;
+                margin:0 3px;
+                font-size:12px;
+            }
+        }
+        .list{
+            padding-bottom:20px;
+            border-bottom:1px solid #ddd;
+            .gds-total{
+                padding-bottom:3px;
+                font-size:12px;
+                border-bottom:1px solid black;
+                .gds-num{
+                    display:inline-block;
+                    min-width: 30px;
+                    color:$mainColor;
+                    padding:0 5px;
+                }
+            }
+            .gds-sorts{
+                border-bottom:1px solid #ddd;
+                .sort{
+                    float: left;
+                    padding:10px 0;
+                    width: 60px;
+                    font-weight:bold;
+                }
+                .gds-price{
+                    float: left;
+                    position:relative;
+                    .a-price{
+                        display:inline-block;
+                        width: 60px;
+                        padding:5px 5px;
+                        margin-top:3px;
+                        &.gds-active{
+                            border:1px solid #EE4242;
+                            color:#EE4242;
+                        }
+                    }
+                    >b{
+                        display:block;
+                        width: 8px;
+                        height: 14px;
+                        position:absolute;
+                        right:14px;
+                        top:12px;
+                        background:url('../img/price_arrow.png');
+                    }
+                }
+            }
+            .gds-list{
+                margin-top:30px;
+                min-height:610px;
+                .gds-li{
+                    float: left;
+                    position:relative;
+                    margin:0 6px 6px 0;
+                    >i{
+                        position:absolute;
+                        font-size:0;
+                        z-index:2;
+                        &.top{
+                            height:1px;
+                            width:0px;
+                            left:0;
+                            top:0px;
+                            background-color:black;
+                        }
+                        &.bottom{
+                            height:1px;
+                            width:0px;
+                            right:0;
+                            bottom:0;
+                            background-color:black;
+                        }
+                        &.left{
+                            height:0px;
+                            width:1px;
+                            left:0;
+                            top:0;
+                            background-color:black;
+                        }
+                        &.right{
+                            height:0px;
+                            width:1px;
+                            right:0;
+                            bottom:0;
+                            background-color:black;
+                        }
+                    }
+                    .gds-a{
+                        box-sizing:border-box;
+                        display:block;
+                        width: 234px;
+                        height: 300px;
+                        border:1px solid #ddd;
+                        >img{
+                            width:100%;
+                        }
+                        .gds-info{
+                            box-sizing:border-box;
+                            display:block;
+                            width: 236px;
+                            padding:10px;
+                            >dt{
+                                >p{
+                                    white-space:nowrap;
+                                    overflow:hidden;
+                                    text-overflow:ellipsis;
+                                }
+                                >h5{
+                                    margin-top:5px;
+                                    color:$mainColor;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .gds-page{
+                margin-top:20px;
+                height: 30px;
+                text-align:center;
+                >ul{
+                    display:inline-block;
+                    >li{
+                        float: left;
+                        margin:0 5px;
+                        >a{
+                            text-align:center;
+                            display:inline-block;
+                            width: 30px;
+                            height: 20px;
+                            border:1px solid #ddd;
+                            &.page-active{
+                                background-color:$mainColor;
+                                color:#fff;
+                                border:1px solid $mainColor;
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}

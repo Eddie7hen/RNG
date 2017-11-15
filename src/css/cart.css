@@ -36,7 +36,7 @@
   max-height: 100px;
 }
 
-#cart .container .cart-box .cart-items .g-pic img {
+#cart .container .cart-box .cart-items .g-pic > img {
   width: 100%;
 }
 
@@ -94,6 +94,7 @@
   height: 176px;
   background-color: #fff;
   border: 1px dotted orange;
+  margin-bottom: 30px;
 }
 
 #cart .container .cart-box .cart-settle .inner-settle {

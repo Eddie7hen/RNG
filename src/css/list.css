@@ -1,0 +1,180 @@
+#main-cont .container .crumbs {
+  width: 100%;
+  padding: 10px 0;
+}
+
+#main-cont .container .crumbs .ico {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#main-cont .container .crumbs .crumbs-a {
+  padding: 5px 0;
+  margin: 0 3px;
+  font-size: 12px;
+}
+
+#main-cont .container .list {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+#main-cont .container .list .gds-total {
+  padding-bottom: 3px;
+  font-size: 12px;
+  border-bottom: 1px solid black;
+}
+
+#main-cont .container .list .gds-total .gds-num {
+  display: inline-block;
+  min-width: 30px;
+  color: orange;
+  padding: 0 5px;
+}
+
+#main-cont .container .list .gds-sorts {
+  border-bottom: 1px solid #ddd;
+}
+
+#main-cont .container .list .gds-sorts .sort {
+  float: left;
+  padding: 10px 0;
+  width: 60px;
+  font-weight: bold;
+}
+
+#main-cont .container .list .gds-sorts .gds-price {
+  float: left;
+  position: relative;
+}
+
+#main-cont .container .list .gds-sorts .gds-price .a-price {
+  display: inline-block;
+  width: 60px;
+  padding: 5px 5px;
+  margin-top: 3px;
+}
+
+#main-cont .container .list .gds-sorts .gds-price .a-price.gds-active {
+  border: 1px solid #EE4242;
+  color: #EE4242;
+}
+
+#main-cont .container .list .gds-sorts .gds-price > b {
+  display: block;
+  width: 8px;
+  height: 14px;
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  background: url("../img/price_arrow.png");
+}
+
+#main-cont .container .list .gds-list {
+  margin-top: 30px;
+  min-height: 610px;
+}
+
+#main-cont .container .list .gds-list .gds-li {
+  float: left;
+  position: relative;
+  margin: 0 6px 6px 0;
+}
+
+#main-cont .container .list .gds-list .gds-li > i {
+  position: absolute;
+  font-size: 0;
+  z-index: 2;
+}
+
+#main-cont .container .list .gds-list .gds-li > i.top {
+  height: 1px;
+  width: 0px;
+  left: 0;
+  top: 0px;
+  background-color: black;
+}
+
+#main-cont .container .list .gds-list .gds-li > i.bottom {
+  height: 1px;
+  width: 0px;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+}
+
+#main-cont .container .list .gds-list .gds-li > i.left {
+  height: 0px;
+  width: 1px;
+  left: 0;
+  top: 0;
+  background-color: black;
+}
+
+#main-cont .container .list .gds-list .gds-li > i.right {
+  height: 0px;
+  width: 1px;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+}
+
+#main-cont .container .list .gds-list .gds-li .gds-a {
+  box-sizing: border-box;
+  display: block;
+  width: 234px;
+  height: 300px;
+  border: 1px solid #ddd;
+}
+
+#main-cont .container .list .gds-list .gds-li .gds-a > img {
+  width: 100%;
+}
+
+#main-cont .container .list .gds-list .gds-li .gds-a .gds-info {
+  box-sizing: border-box;
+  display: block;
+  width: 236px;
+  padding: 10px;
+}
+
+#main-cont .container .list .gds-list .gds-li .gds-a .gds-info > dt > p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#main-cont .container .list .gds-list .gds-li .gds-a .gds-info > dt > h5 {
+  margin-top: 5px;
+  color: orange;
+}
+
+#main-cont .container .gds-page {
+  margin-top: 20px;
+  height: 30px;
+  text-align: center;
+}
+
+#main-cont .container .gds-page > ul {
+  display: inline-block;
+}
+
+#main-cont .container .gds-page > ul > li {
+  float: left;
+  margin: 0 5px;
+}
+
+#main-cont .container .gds-page > ul > li > a {
+  text-align: center;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  border: 1px solid #ddd;
+}
+
+#main-cont .container .gds-page > ul > li > a.page-active {
+  background-color: orange;
+  color: #fff;
+  border: 1px solid orange;
+}
