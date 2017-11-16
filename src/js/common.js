@@ -1,3 +1,17 @@
+define(function(){
+    return {
+        randomNumber: function(min,max){
+            return  parseInt(Math.random()*(max-min+1)+min);
+        },
+        NumberAndAlphabet:function(){
+            let first = randomNumber(0,9);
+            let third = randomNumber(0,9)
+            let second = String.fromCharCode(randomNumber(0,25)+65);
+            let fourth = String.fromCharCode(randomNumber(0,25)+65);
+            return first + second + third + fourth;
+        }
+    }
+})
 /**
  * [实现传入任意数字n时的阶乘]
  * @param  {数字} n [传入的数值]
