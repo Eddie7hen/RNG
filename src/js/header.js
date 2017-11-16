@@ -2,7 +2,7 @@ require(['config'],function(){
     require(['jquery'],function($){
         var xhr = new XMLHttpRequest();
         xhr.onload = function(){
-            var menu = document.querySelector('.menu');
+        var menu = document.querySelector('.menu');
             if(xhr.status === 200 || xhr.status === 304){
                 var res = eval('('+xhr.responseText+')').sorts; 
 
@@ -20,6 +20,7 @@ require(['config'],function(){
                 var id = 0;
 
                 var idx =0;
+
                 //一级绑定事件
                 menu.onmouseenter = function(){
                     menuSec.style.display = 'block';

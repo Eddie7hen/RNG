@@ -4,6 +4,10 @@ requirejs.config({
     //baseUrl:'js',
     paths : {
         "jquery" : "../lib/jQuery/jquery-3.2.1",
-        'header' : "./header"
+        'header' : "./header",
+        'carousel':'../lib/jquery-EdCarousel/jquery-EdCarousel'
+    },
+    shim:{
+        'carousel':['jquery']
     }
 })
