@@ -20,25 +20,23 @@ require(['config'],function(){
                 var id = 0;
 
                 var idx =0;
-                
                 //一级绑定事件
-                menu.onmousemove = function(){
+                menu.onmouseenter = function(){
                     menuSec.style.display = 'block';
                 }
-                menu.onmouseout = function(){
+                menu.onmouseleave = function(){
                     menuSec.style.display = 'none';
                 }   
 
                 //移入二级标签时生成对应的三级标签
                 var menuTrd = document.createElement('div');
                 menuTrd.classList.add('menu-trd');
-                
-                console.log(menuSec.children.length);
+
+
                 //二级菜单移入绑定事件
                 menuSec.onmousemove = function(e){
-                    console.log(555);
                     var className = ['menu-trd','trd-item','trd-l','trd-r','trd-r-a',''];
-                    console.log(e.target.className.toLowerCase());
+                    // console.log(e.target.className.toLowerCase());
                     if(className.indexOf(e.target.className.toLowerCase()) >= 0 ){
                         return ;
                     }
@@ -60,9 +58,10 @@ require(['config'],function(){
                 }
                 //二级菜单移出事件
                 var timer = setTimeout(function(){
-                    menuSec.onmouseout = function(e){
-                        e.target.parentNode.removeChild(menuTrd);
-                        id = idx = 0;
+                    menuSec.onmouseleave = function(){
+                        menuTrd.parentNode.removeChild(menuTrd);
+                        id = 0;
+                        idx =0;
                         for(var i=0;i<menuSec.children.length;i++){
                             menuSec.children[i].children[0].classList.remove('sec-active');
                         }
@@ -80,15 +79,9 @@ require(['config'],function(){
                     for(var i=0;i<menuSec.children.length;i++){
                         menuSec.children[i].children[0].classList.remove('sec-active');
                     }
-                    console.log(666)
-                    console.log(menuTrd.previousElementSibling);
+                    // console.log(666)
+                    // console.log(menuTrd.previousElementSibling);
                     menuTrd.previousElementSibling.classList.add('sec-active');
-                }
-                menuTrd.onmouseleave = function(){
-                    // for(var i=0;i<menuSec.children.length;i++){
-                    //     menuSec.children[i].children[0].classList.remove('sec-active');
-                    // }
-                    menuSec.style.display = 'none';
                 }
 
                 //传入对应id和数据返回需要的数据

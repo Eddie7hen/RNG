@@ -87,4 +87,7 @@
         $(this).find('.p-info-detail').stop().animate({top:10},200);
     });
 
+    $('#header').load('../html/header.html');
+    $('#footer').load('../html/footer.html');
+
 })();
