@@ -1,3 +1,6 @@
+@import "header";
+@import "footer";
+
 $mainColor:orange;
 #main-cont{
     .container{
@@ -34,17 +37,20 @@ $mainColor:orange;
                 .sort{
                     float: left;
                     padding:10px 0;
-                    width: 60px;
+                    width: 120px;
                     font-weight:bold;
+                    text-align:center;
                 }
                 .gds-price{
                     float: left;
                     position:relative;
+                    margin-right:20px;
                     .a-price{
                         display:inline-block;
-                        width: 60px;
                         padding:5px 5px;
                         margin-top:3px;
+                        width: 80px;
+                        text-align:center;
                         &.gds-active{
                             border:1px solid #EE4242;
                             color:#EE4242;
