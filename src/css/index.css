@@ -160,7 +160,7 @@
 
 #header .bottom .menu .menu-sec .sec-item .menu-trd .trd-item {
   border-bottom: 1px dotted #ccc;
-  height: 45px;
+  height: 47px;
 }
 
 #header .bottom .menu .menu-sec .sec-item .menu-trd .trd-item .trd-l {
@@ -581,16 +581,16 @@
   background-color: orange;
 }
 
-#main-content .container .popular .p-item .p-item {
+#main-content .container .popular #p-item .p-item {
   box-sizing: border-box;
   border-left: 1px solid #ddd;
 }
 
-#main-content .container .popular .p-item .p-item li {
+#main-content .container .popular #p-item .p-item li {
   float: left;
 }
 
-#main-content .container .popular .p-item .p-item li .p-details-a {
+#main-content .container .popular #p-item .p-item li .p-details-a {
   box-sizing: border-box;
   display: block;
   width: 239.8px;
@@ -600,38 +600,38 @@
   overflow: hidden;
 }
 
-#main-content .container .popular .p-item .p-item li .p-details-a .p-img-box {
+#main-content .container .popular #p-item .p-item li .p-details-a .p-img-box {
   height: 180px;
   width: 238px;
   text-align: center;
 }
 
-#main-content .container .popular .p-item .p-item li .p-details-a .p-img-box > img {
+#main-content .container .popular #p-item .p-item li .p-details-a .p-img-box > img {
   height: 160px;
   width: 200px;
 }
 
-#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail {
+#main-content .container .popular #p-item .p-item li .p-details-a .p-info-detail {
   text-align: center;
   padding: 0 5px;
   position: relative;
   top: 10px;
 }
 
-#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail .p-info {
+#main-content .container .popular #p-item .p-item li .p-details-a .p-info-detail .p-info {
   font-size: 14px;
   font-weight: 500px;
   color: #555;
   height: 40px;
 }
 
-#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail .p-price {
+#main-content .container .popular #p-item .p-item li .p-details-a .p-info-detail .p-price {
   font-size: 18px;
   color: #ed4242;
   margin: 8px 0 4px 0;
 }
 
-#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail .p-gps {
+#main-content .container .popular #p-item .p-item li .p-details-a .p-info-detail .p-gps {
   height: 20px;
   color: #999;
   white-space: nowrap;
@@ -639,7 +639,7 @@
   font-size: 12px;
 }
 
-#main-content .container .popular .p-item .p-item li .p-details-a .p-info-detail .p-gps > img {
+#main-content .container .popular #p-item .p-item li .p-details-a .p-info-detail .p-gps > img {
   height: 11px;
   width: 16px;
   border: 1px solid #ddd;

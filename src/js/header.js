@@ -1,121 +1,67 @@
 require(['config'],function(){
     require(['jquery'],function($){
-        var xhr = new XMLHttpRequest();
-        xhr.onload = function(){
-        var menu = document.querySelector('.menu');
-            if(xhr.status === 200 || xhr.status === 304){
-                var res = eval('('+xhr.responseText+')').sorts; 
+        var $menu = $('.menu');
+        var $menuSec = $('.menu-sec');
 
-                //二级菜单
-                var menuSec = document.createElement('dl');
-                menuSec.classList.add('menu-sec');
-                console.log(res);
-                menuSec.innerHTML = res.map(function(item){
-                    return `<dt class="sec-item">
-                                <a href="#" class="sec-a" id="${item.id}">${item.name}</a>
-                    </dt>`
-                }).join('');
-                menu.appendChild(menuSec);
+        //移入移出显示二级菜单
+        $menu.on('mouseenter',function(){
+            $menuSec.show();
+        }).on('mouseleave',function(){
+            $menuSec.hide();
+        })
 
-                var id = 0;
+        //创建三级
+        var $menuTrd = $('<div/>');
+        $menuTrd.addClass('menu-trd');
 
-                var idx =0;
+        //移入二级显示三级
+        $menuSec.on('mouseenter','.sec-a',function(){
+            console.log(66);
+            //进来前先清除样式
+            $menuSec.children('.sec-item').children('.sec-a').removeClass('sec-active');
+            $(this).addClass('sec-active');
 
-                //一级绑定事件
-                menu.onmouseenter = function(){
-                    menuSec.style.display = 'block';
-                }
-                menu.onmouseleave = function(){
-                    menuSec.style.display = 'none';
-                }   
+            //生成三级标签
+            $menuTrd.html(function(){
+                return `<dl class="trd-item">
+                            <dt class="trd-l">
+                                <a href="#">婴儿奶粉</a>
+                            </dt>
+                            <dt class="trd-r">
+                                <a href="#" class="trd-r-a">幼儿奶粉</a>
+                                <a href="#" class="trd-r-a">成长奶粉</a>
+                            </dt>
+                        </dl>
+                        <dl class="trd-item">
+                            <dt class="trd-l">
+                                <a href="#">品牌</a>
+                            </dt>
+                            <dt class="trd-r">
+                                <a href="#" class="trd-r-a">新西兰原装</a>
+                                <a href="#" class="trd-r-a">爱他美</a>
+                                <a href="#" class="trd-r-a">牛栏</a>
+                                <a href="#" class="trd-r-a">雅培小安素</a>
+                                <a href="#" class="trd-r-a">惠氏</a>
+                            </dt>
+                        </dl>`
+            })
 
-                //移入二级标签时生成对应的三级标签
-                var menuTrd = document.createElement('div');
-                menuTrd.classList.add('menu-trd');
+            $(this).append($menuTrd);
 
-
-                //二级菜单移入绑定事件
-                menuSec.onmousemove = function(e){
-                    var className = ['menu-trd','trd-item','trd-l','trd-r','trd-r-a',''];
-                    // console.log(e.target.className.toLowerCase());
-                    if(className.indexOf(e.target.className.toLowerCase()) >= 0 ){
-                        return ;
-                    }
-                    
-                    for(var i=0;i<menuSec.children.length;i++){
-                        menuSec.children[i].children[0].classList.remove('sec-active');
-                    }
-                    id = +e.target.id;//获取id
-
-                    idx = id ;
-
-                    e.target.classList.add('sec-active');
-
-                    //三级数据
-                    var menutrd = getData(res,id);
-                    var html = getHTML(menutrd);
-                    menuTrd.innerHTML =html;
-                    e.target.parentNode.appendChild(menuTrd);
-                }
-                //二级菜单移出事件
-                var timer = setTimeout(function(){
-                    menuSec.onmouseleave = function(){
-                        menuTrd.parentNode.removeChild(menuTrd);
-                        id = 0;
-                        idx =0;
-                        for(var i=0;i<menuSec.children.length;i++){
-                            menuSec.children[i].children[0].classList.remove('sec-active');
-                        }
-                    }   
-                },2000)
-
-                /*
-                    问题:移入三级时,显示二级当前不隐藏
-                    思路:   延迟二级菜单的关闭
-                            移入三级时,清除二级延时器
-                            显示二级
-                 */
-                menuTrd.onmouseenter = function(){
-                    clearTimeout(timer);
-                    for(var i=0;i<menuSec.children.length;i++){
-                        menuSec.children[i].children[0].classList.remove('sec-active');
-                    }
-                    // console.log(666)
-                    // console.log(menuTrd.previousElementSibling);
-                    menuTrd.previousElementSibling.classList.add('sec-active');
-                }
-
-                //传入对应id和数据返回需要的数据
-                function getData(data,id){
-                    if(id){
-                        console.log()
-                        for(var i=0;i<data.length;i++){
-                            if(id == data[i].id){
-                                return data[i].sorts;
-                            }
-                        }     
-                    }
-                    return data.sorts;
-                }
-
-                //生成三级结构页面结构
-                function getHTML(data){
-                     return data.map(function(item){
-                        return `<dl class="trd-item">
-                                <dt class="trd-l" id="${item.id}">
-                                    <a href="#">${item.name}</a>
-                                </dt>
-                                <dt class="trd-r">
-                                    ${item.sorts.map(it=>{ 
-                                        return `<a href="#" class="trd-r-a">${it.name}</a>`
-                                    }).join('')}
-                                </dt>
-                                </dl> `
-                    }).join('');
-                }
+            console.log($(this));
+            if($(this).parent().index()>2){
+                $menuTrd.css({
+                    top:-($(this).parent().index()-3)*58,
+                })
             }
-        }
-        xhr.open('get','../api/data/data.json',true);
-        xhr.send(null);
+
+        }).on('mouseleave','.sec-a',function(){
+            $menuSec.children('.sec-item').children('.sec-a').removeClass('sec-active');
+            $menuTrd.css({
+                    top:0,
+                })
+            $menuTrd.remove();
+        })
+
     });
 });

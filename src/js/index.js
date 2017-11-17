@@ -94,6 +94,64 @@ require(['config'],function(){
             $(this).find('.p-info-detail').stop().animate({top:10},200);
         });
 
+        //获取数据
+        $.ajax({
+            type:'GET',
+            url:'../api/type.php',
+            success:function(json){
+                var res = json;
+                console.log(res);
+                //新品板块
+                var $ulItem = $('.ul-item');
+                var html = $.map(res,function(item){
+                    if(item.new){
+                        return `<li>
+                            <a href="#" class="details-a" data-id="${item.id}">
+                                <div class="img-box">
+                                    <img src="${item.imgurl}"  />
+                                </div>
+                                <div class="info-detail">
+                                    <h3 title="${item.details}" class="info"> ${item.details}</h3>
+                                    <p class="price">${item.price}</p>
+                                    <p class="gps">
+                                        中国
+                                        <img src="img/cn.jpg" />
+                                    </p>
+                                </div>
+                            </a>
+                        </li>`
+                        
+                    }
+                })
+                $ulItem.html(html);
+
+                //热门板块
+                var $pItem = $('.p-item');
+                var html1 = $.map(res,function(item){
+                    if(item.hot){
+                        return `<li>
+                            <a href="#" class="p-details-a" data-id="${item.id}">
+                                <div class="p-img-box">
+                                    <img src="${item.imgurl}" />
+                                </div>
+                                <div class="p-info-detail">
+                                    <h3 title="${item.details}" class="p-info">${item.details}</h3>
+                                    <p class="p-price">${item.price}</p>
+                                    <p class="p-gps">
+                                        中国
+                                        <img src="img/cn.jpg" />
+                                    </p>
+                                </div>
+                            </a>
+                        </li>`
+                    }
+                })
+                $pItem.html(html1);
+            },
+            dataType:'json',
+            async:true
+        })
+
         
     })
 })
