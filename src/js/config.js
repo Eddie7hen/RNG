@@ -6,9 +6,12 @@ requirejs.config({
         "jquery" : "../lib/jQuery/jquery-3.2.1",
         'header' : "./header",
         'carousel':'../lib/jquery-EdCarousel/jquery-EdCarousel',
-        'common':'./common'
+        'common':'./common',
+        'edzoom':'../lib/jquery-EdZoom/jquery-EdZoom'
     },
     shim:{
-        'carousel':['jquery']
+        'carousel':['jquery'],
+        'edzoom':['jquery']
+
     }
 })

@@ -63,5 +63,12 @@ require(['config'],function(){
             $menuTrd.remove();
         })
 
+
+        //点击进入详情页
+        $menuSec.on('click','.sec-a',function(){
+            console.log(666);
+            location.href = '../html/list.html';
+        })
+
     });
 });

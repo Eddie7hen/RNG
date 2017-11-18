@@ -33,7 +33,7 @@ require(['config'],function(){
 
         //popular轮播图
         var $popular = $('.p-tab-c');
-        $popular.EdCarousel({
+        $popular.stop().EdCarousel({
             img:['img/pop1.jpg','img/pop2.jpg','img/pop3.jpg','img/pop4.jpg','img/pop5.jpg'],
             width:719,
             height:350,

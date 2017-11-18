@@ -2,6 +2,7 @@
 @import "footer";
 
 $mainColor:orange;
+$bderColor:black;
 #main-cont{
     .container{
         .crumbs{
@@ -83,28 +84,28 @@ $mainColor:orange;
                             width:0px;
                             left:0;
                             top:0px;
-                            background-color:black;
+                            background-color:$bderColor;
                         }
                         &.bottom{
                             height:1px;
                             width:0px;
                             right:0;
                             bottom:0;
-                            background-color:black;
+                            background-color:$bderColor;
                         }
                         &.left{
                             height:0px;
                             width:1px;
                             left:0;
                             top:0;
-                            background-color:black;
+                            background-color:$bderColor;
                         }
                         &.right{
                             height:0px;
                             width:1px;
                             right:0;
                             bottom:0;
-                            background-color:black;
+                            background-color:$bderColor;
                         }
                     }
                     .gds-a{

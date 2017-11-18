@@ -82,13 +82,14 @@ $navTopfz:12px;
             }
             .cart{
                 width: 124px;
-                height: 107px;
+                // height: 107px;
                 padding-top:49px;
                 a{
                     display:block;
                     width: 124px;
                     height: 45px;
                     background-color:#ECECEC;
+                    position:relative;
                     i{
                         margin:2px;
                         width: 41px;
@@ -102,6 +103,18 @@ $navTopfz:12px;
                        line-height:45px;
                        font-size:16px;
                        padding-right:14px;
+                    }
+                    .num{
+                        float: left;
+                        border:1px dashed #58bc58;
+                        min-width: 30px;
+                        min-height: 30px;
+                        text-align:center;
+                        line-height:30px;
+                        position:absolute;
+                        left:7px;
+                        top:-32px;
+                        transform:rotateZ(45deg);
                     }
                 }
             }
@@ -117,7 +130,8 @@ $navTopfz:12px;
                 color:#fff;
                 background-color:#163672;
                 position:relative;
-                .menu-sec{                    
+                z-index:20;
+                .menu-sec{                  
                     background-color:#163672;
                     display:none;
                     position:relative;

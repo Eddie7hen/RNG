@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2017-11-09 10:53:19
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-11-18 15:40:16
+* @Last Modified time: 2017-11-10 17:40:58
 */
 ;(function($){
     $.fn.EdZoom = function(options){
@@ -18,16 +18,11 @@
 
             //大图显示的位置小图的右边
             position:'right',
-
-            //小图增大的倍数
-            multiple:9
         }
 
         this.each(function(){
             //这里this指:节点,定义变量获取小图
             var $small = $(this);
-
-            console.log($small);
 
             //处理参数
             var opt = $.extend({},defaults,options)
@@ -56,18 +51,13 @@
                     //top的值应该等于小图offset().top
                     this.$big.css({
                         left:this.$smallImg.width()+opt.gap,
-                        top:0,
+                        top:this.$smallImg.offset().top,
                     })
                     console.log(this.$smallImg.width()+opt.gap)
 
 
                     //生成大图
-                    // this.$bigImg = $('<img/>');
-                    this.$bigImg = this.$smallImg.clone();
-                    this.$bigImg.css({
-                        width:this.$smallImg.width()*opt.multiple,
-                        height:this.$smallImg.height()*opt.multiple
-                    })
+                    this.$bigImg = $('<img/>');
 
                     //生成放大镜
                     this.$Zoom = $('<span/>').addClass('minzoom');
@@ -85,22 +75,22 @@
                 //显示就是当鼠标移上时,将页面生成结构插入
                 _show:function(){
                     //导入图片地址
-                    // this.$bigImg.attr('src',this.$smallImg.attr('data-big'));
+                    this.$bigImg.attr('src',this.$smallImg.attr('data-big'));
                     //将图片插入容器中
                     this.$bigImg.appendTo(this.$big);
                     //将$big插入body
-                    this.$big.appendTo($small);
+                    this.$big.appendTo('body');
                     //将放大镜插入写入$small内
                    $small.append(this.$Zoom);
 
                    //等图片加载完时onload获取图片的宽度或者高度,计算比例
                    this.$bigImg[0].onload = function(){
-                        // this.ratio = this.$bigImg.outerWidth()/this.$smallImg.outerWidth();
+                        this.ratio = this.$bigImg.outerWidth()/this.$smallImg.outerWidth();
 
                         //将放大镜尺寸与大图容器等比例缩小
                         this.$Zoom.css({
-                            width:opt.width/opt.multiple,
-                            height:opt.height/opt.multiple,
+                            width:opt.width/this.ratio,
+                            height:opt.height/this.ratio,
                         });
                    }.bind(this);
                 },
@@ -136,8 +126,8 @@
 
                     //根据比例计算大图的移动的距离,与放大镜方向相反
                     this.$bigImg.css({
-                        left:-left*opt.multiple,
-                        top:-top*opt.multiple
+                        left:-left*this.ratio,
+                        top:-top*this.ratio
                     })
                     
                 },
