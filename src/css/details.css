@@ -523,6 +523,7 @@
   line-height: 41px;
   color: #ed4242;
   margin-left: 40px;
+  cursor: pointer;
 }
 
 #details .container .dtl-content .dtl-info .info-buy > li .info-c-a {
@@ -534,6 +535,7 @@
   text-align: center;
   line-height: 41px;
   color: #fff;
+  cursor: pointer;
 }
 
 #details .container .main-com .mainCom-tit {

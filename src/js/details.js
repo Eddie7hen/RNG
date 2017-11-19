@@ -1,7 +1,6 @@
 require(['config'],function(){
     require(['jquery','common','edzoom'],function($,com){
-        var cart = {}
-        console.log(com.Cookie.get);
+        var cart = {};
         $('#header').load('../html/header.html',function(){
             require(['header'],function(){
                 //获取头部内容的函数
@@ -46,7 +45,7 @@ require(['config'],function(){
                                     <img src="../${item.imgurl}" />
                                 </span>
                             </div>
-                            <div class="dtl-info">
+                            <div class="dtl-info" data-id="${item.id}">
                                 <h4 class="info-tit">
                                     ${item.details}
                                 </h4>
@@ -59,7 +58,7 @@ require(['config'],function(){
                                 </dl>
                                 <dl class="info-std clearfix">
                                     <dt>规格:</dt>
-                                    <dd><span href="#" >1段</span><i></i></dd>
+                                    <dd><span href="#"class="std-active">1段</span><i style="display:block"></i></dd>
                                     <dd><span href="#">2段</span><i></i></dd>
                                     <dd><span href="#">3段</span><i></i></dd>
                                 </dl>
@@ -79,8 +78,8 @@ require(['config'],function(){
                                     </dd>
                                 </dl>
                                 <ul class="info-buy clearfix">
-                                    <li><a href="#" class="info-b-a"><i></i>立即购买</a></li>
-                                    <li><a href="#" class="info-c-a"><i></i>加入购物车</a></li>
+                                    <li><a  class="info-b-a"><i></i>立即购买</a></li>
+                                    <li><a  class="info-c-a"><i></i>加入购物车</a></li>
                                 </ul>
                             </div>`
                 }).join('');
@@ -95,7 +94,7 @@ require(['config'],function(){
                     height:400,
                 });
 
-                //进入之前判断是否存在数组
+                //进入之前获取cookie
                 var goodslist = com.Cookie.get('goodslist');
                 
                 //判断是否存在cookie
@@ -104,9 +103,11 @@ require(['config'],function(){
                 }else{
                     goodslist = JSON.parse(goodslist);
                 }
+                console.log(goodslist);
 
                 //建立数组,获取信息存入cookie
                 var goods = {};
+
 
                 //规格
                 var $std = $('.info-std');
@@ -114,7 +115,6 @@ require(['config'],function(){
                     var $this = $(this);
                     $this.parent().parent().find('span').removeClass('std-active').next('i').hide();
                     $this.addClass('std-active').next('i').show();
-                    goods.std = $this.html();//点击写入规格的字符串
                 })
 
                 //点击+/-改变qty数量
@@ -135,6 +135,10 @@ require(['config'],function(){
                     }
                 })
                 
+                var $info = $('.dtl-info');
+                var id = $info.attr('data-id');
+                var currentIdx;
+                console.log(id);
                 //飞入购物车效果
                 //获取加入购物车按钮
                 var $addCart = $('.info-c-a');
@@ -158,17 +162,31 @@ require(['config'],function(){
                         $copy.remove();
                     })
 
-                    var temp = {
-                        qty:$qty.val(),
-                        imgurl:res[0].imgurl,
-                        details:res[0].details,
-                        area:res[0].area,
-                        id:res[0].id
-                    }
-                    
-                    goods = Object.assign({},goods,temp);
 
-                    goodslist.push(goods);
+                    
+                    var res = goodslist.some(function(item,idx){
+                        currentIdx = idx;
+                        console.log(item);
+                        return item.id == id;
+                    })
+
+                    if(res){
+                        goodslist[currentIdx].qty = $qty.val();
+                        goodslist[currentIdx].std = $('.std-active').html();
+                    }else{
+                        var temp = {
+                            qty:$qty.val(),
+                            imgurl:$('.img-box').children('img').attr('src'),
+                            details:$('.info-tit').html(),
+                            area:$('.info-produc').html(),
+                            id:$('.dtl-info').attr('data-id'),
+                            price:$('.info-price').find('b').html(),
+                            std:$('.std-active').html(),
+                        }          
+                        goodslist.push(temp)
+                    }
+
+                    console.log(goodslist);
                     //写入cookie
                     com.Cookie.set('goodslist',JSON.stringify(goodslist))
 

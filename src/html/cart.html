@@ -6,17 +6,18 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="../css/base.css" />
     <link rel="stylesheet" type="text/css" href="../css/cart.css" />
+   <!--  <link rel="stylesheet" type="text/css" href="../css/header.css" /> -->
 </head>
 <body>
     <header id="header"></header>
-   <main id="cart">
+    <main id="cart">
        <div class="container">
            <p class="cart-switch">
                全部商品<span class="cart-item">1</span>
            </p>
            <dl class="cart-box">
                <dt class="clear">
-                    <span class="col-md-1"><input type="checkbox" />全选</span>
+                    <span class="col-md-1"><label for="checkAll"><input type="checkbox" id="checkAll" name="checkAll"/>全选</label></span>
                     <span  class="col-md-3">商品名称</span>
                     <span  class="col-md-1 tc">属性</span>
                     <span  class="col-md-2 tc">单价</span>
@@ -24,7 +25,8 @@
                     <span  class="col-md-2 tc">小记</span>
                     <span  class="col-md-1 tc">操作</span>
                </dt>
-               <dd class="clear cart-items">
+               <div class="box"></div>
+        <!-- <dd class="clear cart-items">
                     <span class="col-md-1"><input type="checkbox" /></span>
                     <span  class="col-md-3">
                         <div class="g-pic">
@@ -58,8 +60,8 @@
                     <span  class="col-md-1 tc">
                         <div class="g-btnclose">&times;</div>
                     </span>
-               </dd>
-               <dd class="clear cart-items">
+        </dd>
+        <dd class="clear cart-items">
                     <span class="col-md-1"><input type="checkbox" /></span>
                     <span  class="col-md-3">
                         <div class="g-pic">
@@ -93,8 +95,8 @@
                     <span  class="col-md-1 tc">
                         <div class="g-btnclose">&times;</div>
                     </span>
-               </dd>
-               <dd class="clear cart-items">
+        </dd>
+        <dd class="clear cart-items">
                     <span class="col-md-1"><input type="checkbox" /></span>
                     <span  class="col-md-3">
                         <div class="g-pic">
@@ -128,19 +130,19 @@
                     <span  class="col-md-1 tc">
                         <div class="g-btnclose">&times;</div>
                     </span>
-               </dd>
-               <dd class="clear cart-settle">
-                   <div class="inner-settle">
-                       <p>共"
-                           <span id="cart-count" >1</span>" 件商品 总价（不含运费）<b class="cse">￥188.80</b>
-                       </p>
-                       <p><a class="cart-checkout">立即结算</a></p>
-                   </div>
-               </dd>
-           </dl>
+        </dd> -->
+            <dd class="clear cart-settle">
+                <div class="inner-settle">
+                    <p>共"
+                        <span id="cart-count" >0</span>" 件商品 总价（不含运费）<b class="cse">￥0.00</b>
+                    </p>
+                    <p><a class="cart-checkout">立即结算</a></p>
+                </div>
+            </dd>
+        </dl>
        </div>
    </main>
    <footer id="footer"></footer>
-   <script src="../js/require.js" data-main="../js/cart"></script>
 </body>
 </html>
+   <script src="../js/require.js" data-main="../js/cart"></script>
