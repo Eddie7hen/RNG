@@ -97,7 +97,10 @@ require(['config'],function(){
                 total_num += +$(this).closest('.cart-items').find('.ipt').html()   
             }else{
                 //减等于当前点击获取的html
-                total_price -= +$(this).closest('.cart-items').find('.g-total').html();
+                // console.log(+$(this).closest('.cart-items').find('.g-price').html(),$(this).closest('.cart-items').find('.ipt').html())
+                total_price = Number($cse.html());
+                total_num = Number($count.html());
+                total_price -= (+$(this).closest('.cart-items').find('.g-price').html()*+$(this).closest('.cart-items').find('.ipt').html());
                 total_num -=  +$(this).closest('.cart-items').find('.ipt').html();
             }
 
@@ -108,6 +111,9 @@ require(['config'],function(){
 
 
         //点击+/-改变数量和价格,并写入数组内,后更新入cookie
+        //定义两个变量计算加减的次数
+        var des = 0;
+        var ins = 0; 
         var $gNum = $('.g-num');
         $gNum.on('click','a',function(){
             var $this = $(this);
@@ -116,18 +122,35 @@ require(['config'],function(){
             if($this.hasClass('De')){
                 this.num = $this.next('.ipt').html();
                 if(this.num <=1){
+                    des = des;
                     this.num = 1;
                 }else{
                     this.num--;
+                    des++;
+                    console.log(des);
                 }
                 $this.next('.ipt').html(this.num);
                 $gtotal.html(($price*this.num).toFixed(2));
+
+                //判断当前的input是否有勾选,有就加,没有就不执行
+                if($this.closest('.cart-items').find('input').prop('checked')){
+                    $count.html(total_num - des );
+                    $cse.html((total_price - des*+$price ).toFixed(2));
+                }
+                
             }
             if($this.hasClass('In')){
                 this.num = $this.prev('.ipt').html();
                 this.num++;
+                ins++;
                 $this.prev('.ipt').html(this.num);
                 $gtotal.html(($price*this.num).toFixed(2));
+
+                //判断当前的input是否有勾选,有就加,没有就不执行
+                if($this.closest('.cart-items').find('input').prop('checked')){
+                    $count.html(total_num + ins );
+                    $cse.html((total_price + ins*+$price ).toFixed(2));
+                }
             }
 
             //获取对应所在的数组的idx
