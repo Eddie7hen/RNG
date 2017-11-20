@@ -76,7 +76,7 @@ require(['config'],function(){
             }
 
             $count.html(total_num);
-            $cse.html('￥'+ total_price.toFixed(2));
+            $cse.html(total_price.toFixed(2));
 
         })
 
@@ -106,7 +106,7 @@ require(['config'],function(){
 
             
             $count.html(total_num);
-            $cse.html('￥'+ total_price.toFixed(2));
+            $cse.html(total_price.toFixed(2));
         })
 
 
@@ -135,7 +135,7 @@ require(['config'],function(){
                 //判断当前的input是否有勾选,有就加,没有就不执行
                 if($this.closest('.cart-items').find('input').prop('checked')){
                     $count.html(total_num - des );
-                    $cse.html((total_price - des*+$price ).toFixed(2));
+                    $cse.html((total_price - (des*+$price) ).toFixed(2));
                 }
                 
             }
@@ -149,7 +149,7 @@ require(['config'],function(){
                 //判断当前的input是否有勾选,有就加,没有就不执行
                 if($this.closest('.cart-items').find('input').prop('checked')){
                     $count.html(total_num + ins );
-                    $cse.html((total_price + ins*+$price ).toFixed(2));
+                    $cse.html((total_price + (ins*+$price) ).toFixed(2));
                 }
             }
 
